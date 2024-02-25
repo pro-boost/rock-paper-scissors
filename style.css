@@ -11,7 +11,12 @@ h1{
     font-weight: 900;
     color: blanchedalmond;    
 }
-
+@media (max-width: 575px) {
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
 .content {
     margin: 0;
     padding: 0;
@@ -27,7 +32,13 @@ h1{
     position: absolute;
     top: 0; 
     width: 100%; 
+    padding: 30px;
 }
+@media (max-width: 575px) {
+    .header {
+      padding: 15px;
+    }
+  }
 .game{
     position: absolute; 
     top: 50%; 
