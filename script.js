@@ -22,8 +22,10 @@ function playGame() {
         result = "You lose! " + randomString + " beats " + game + ".";
     } else if (game === "scissors" && randomString === "paper") {
         result = "You win! " + game + " beats " + randomString + ".";
-    } else {
+    } else if (game === randomString) {
         result = "Draw! Both chose " + game + ".";
+    } else {
+        result = "But your input was invalid. Please try again.";
     }
     computersChoice = randomString;
     document.getElementById("computersChoice").textContent = randomString;
