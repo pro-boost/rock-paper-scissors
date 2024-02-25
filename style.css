@@ -1,56 +1,77 @@
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;;
-
+    font-family: 'Poppins', sans-serif;
 }
 
-h1{
+h1 {
     font-size: 3rem;
     font-weight: 900;
     color: blanchedalmond;    
 }
+
 @media (max-width: 575px) {
     h1 {
-      font-size: 2rem;
-      font-weight: 700;
+        font-size: 2rem;
+        font-weight: 700;
     }
-  }
+}
+
 .content {
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
-    min-height: 100vh; 
+    justify-content: space-between;
+    height: 100vh;
     width: 100vw;
-    position: relative; 
+    overflow: auto;
 }
-.header{
-    position: absolute;
-    top: 0; 
-    width: 100%; 
+@media (max-height: 600px) {
+    .content {
+        justify-content: center;
+    }
+}
+.header {
+
+    width: 100%;
     padding: 30px;
+    background-color: #333;
 }
+
 @media (max-width: 575px) {
     .header {
-      padding: 15px;
+        padding: 15px;
     }
-  }
-.game{
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
+}
+.game {
+    margin: 0 auto;
     display: block;
-    align-items: center;
-    justify-content: center;
+    overflow: auto; /* Add overflow to enable scrolling if content exceeds game div height */
+    padding: 20px;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0; /* Position footer at the bottom */
-    width: 100%; 
+
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+@media (max-width: 575px) {
+    .footer {
+        flex-direction: column;
+    }
+}
+@media (max-height: 600px) {
+    .footer, .header {
+        display: none;
+    }
+    .game {
+        margin: 0 auto;
+    }
 }
