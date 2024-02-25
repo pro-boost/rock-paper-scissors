@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;;
+
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 900;
+    color: blanchedalmond;    
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center vertically */
+    min-height: 100vh; /* Ensure content takes at least the full viewport height */
+    width: 100vw;
+    position: relative; /* Required for absolute positioning of footer */
+}
+.header{
+    position: absolute;
+    top: 0; /* Position footer at the bottom */
+    width: 100%; /* Full width */
+}
+.game{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0; /* Position footer at the bottom */
+    width: 100%; /* Full width */
+}
