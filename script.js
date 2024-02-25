@@ -1,3 +1,8 @@
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        playGame();
+    }
+}
 function playGame() {
     let game = document.getElementById("game").value.toLowerCase();
     let strings = ["rock", "paper", "scissors"];
