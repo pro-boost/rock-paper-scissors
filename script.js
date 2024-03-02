@@ -3,7 +3,7 @@ function playGame() {
     let game = document.getElementById("game").value.toLowerCase();
     let strings = ["rock", "paper", "scissors"];
     let randomString = strings[Math.floor(Math.random() * strings.length)];
-    let computersChoice = "computer chooses ";
+    let computersChoice = "";
     let result = "";
 
     if (game === "rock" && randomString === "paper") {
@@ -24,7 +24,7 @@ function playGame() {
         result = "But your input was invalid. Please try again.";
     }
     computersChoice = randomString;
-    document.getElementById("computersChoice").textContent = "the computer choosed : " + randomString;
+    document.getElementById("computersChoice").textContent = "The computer choosed : " + randomString;
 
     document.getElementById("result").textContent = result;
 }
