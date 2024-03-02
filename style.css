@@ -45,7 +45,7 @@ h1 {
         padding: 15px;
     }
 }
-.game {
+.game-core {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,11 +58,17 @@ h1 {
 .logo {
     width: 200px;
     height: auto;
-    margin: 0 auto;
 }
 @media (max-width: 575px) {
     .logo {
         width: 150px;
+    }
+}
+
+@media (max-width: 575px) {
+    #game {
+    white-space: nowrap;
+    text-overflow: ellipsis;
     }
 }
 
@@ -87,7 +93,7 @@ h1 {
     .footer, .header {
         display: none;
     }
-    .game {
+    .game-core {
         margin: 0 auto;
     }
 }

@@ -1,8 +1,4 @@
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-        playGame();
-    }
-}
+
 function playGame() {
     let game = document.getElementById("game").value.toLowerCase();
     let strings = ["rock", "paper", "scissors"];
@@ -31,4 +27,9 @@ function playGame() {
     document.getElementById("computersChoice").textContent = "the computer choosed : " + randomString;
 
     document.getElementById("result").textContent = result;
+}
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        playGame();
+    }
 }
