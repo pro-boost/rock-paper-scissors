@@ -1,35 +1,62 @@
 
-function playGame() {
-    let game = document.getElementById("game").value.toLowerCase();
-    let strings = ["rock", "paper", "scissors"];
-    let randomString = strings[Math.floor(Math.random() * strings.length)];
-    let computersChoice = "";
-    let result = "";
+let result;
+let computersChoice;
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
+let playerChoice;
 
-    if (game === "rock" && randomString === "paper") {
-        result = "You lose! " + randomString + " beats " + game + ".";
-    } else if (game === "rock" && randomString === "scissors") {
-        result = "You win! " + game + " beats " + randomString + ".";
-    } else if (game === "paper" && randomString === "scissors") {
-        result = "You lose! " + randomString + " beats " + game + ".";
-    } else if (game === "paper" && randomString === "rock") {
-        result = "You win! " + game + " beats " + randomString + ".";
-    } else if (game === "scissors" && randomString === "rock") {
-        result = "You lose! " + randomString + " beats " + game + ".";
-    } else if (game === "scissors" && randomString === "paper") {
-        result = "You win! " + game + " beats " + randomString + ".";
-    } else if (game === randomString) {
-        result = "Draw! Both chose " + game + ".";
-    } else {
-        result = "But your input was invalid. Please try again.";
-    }
-    computersChoice = randomString;
-    document.getElementById("computersChoice").textContent = "The computer choosed : " + randomString;
 
-    document.getElementById("result").textContent = result;
+//function to chose a random weapon (Rock,Paper or Scissors)
+function randomWeapon(){
+    let weapon =["Rock","Paper","Scissors"];
+    let ranWeapon = weapon[Math.floor(Math.random()*weapon.length)]
+    return ranWeapon;
 }
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-        playGame();
+
+
+// Add event listeners to buttons
+rock.addEventListener("click", function() {
+    playerChoice = "Rock";
+    rock.style.backgroundColor="green";
+    paper.style.backgroundColor="";
+    scissors.style.backgroundColor="";
+    playGame();
+});
+
+paper.addEventListener("click", function() {
+    playerChoice = "Paper";
+    rock.style.backgroundColor="";
+    paper.style.backgroundColor="green";
+    scissors.style.backgroundColor="";
+    playGame();
+});
+
+scissors.addEventListener("click", function() {
+    playerChoice = "Scissors";
+    rock.style.backgroundColor="";
+    paper.style.backgroundColor="";
+    scissors.style.backgroundColor="green";
+    playGame();
+});
+
+//function to compare the randomWeapon with playersChoice
+function playGame(){
+    
+    computersChoice=randomWeapon();
+    if(playerChoice === computersChoice){
+        result = "Draw! Both chose " + playerChoice + ".";
     }
+    if ((playerChoice==="Rock"&& computersChoice==="Paper") 
+        || (playerChoice==="Paper"&& computersChoice==="Scissors") 
+        || (playerChoice==="Scissors"&& computersChoice==="Rock")) {
+            result = "You loose! " +computersChoice + " beats " + playerChoice + ".";
+        }
+    if ((playerChoice==="Rock"&& computersChoice==="Scissors") 
+        || (playerChoice==="Paper"&& computersChoice==="Rock") 
+        || (playerChoice==="Scissors"&& computersChoice==="Paper")) {
+            result = "You Win! " + playerChoice + " beats " + computersChoice + ".";
+        }
+        document.querySelector("#computersChoice").textContent = "The computer's choice is " +computersChoice;
+        document.querySelector("#result").textContent = result;
 }
