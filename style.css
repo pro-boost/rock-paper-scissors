@@ -8,73 +8,53 @@ body {
 h1 {
     font-size: 3rem;
     font-weight: 900;
-    color: blanchedalmond;    
-}
-
-@media (max-width: 575px) {
-    h1 {
-        font-size: 2rem;
-        font-weight: 700;
-    }
+    color: rgb(255, 255, 230)      
 }
 
 .content {
+    background-image: url("./images/background.jpg");
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
-    width: 100vw;
-    overflow: auto;
-}
-@media (max-height: 600px) {
-    .content {
-        justify-content: center;
-    }
-}
-.header {
 
+}
+
+.header {
+    height: 200px;
     width: 100%;
     padding: 30px;
-    background-color: #333;
 }
 
-
-@media (max-width: 575px) {
-    .header {
-        padding: 15px;
-    }
-}
 .game-core {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    overflow: auto; /* Add overflow to enable scrolling if content exceeds game div height */
-    padding: 20px;
+    padding: 70px;
+    background-color: rgb(255, 255, 230);
+    width: 500px;   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
     width: 200px;
     height: auto;
 }
-@media (max-width: 575px) {
-    .logo {
-        width: 150px;
-    }
-}
 
-@media (max-width: 575px) {
-    #game {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    }
+#result{
+    margin-top: 1rem;
+    text-align: center; 
+    text-wrap: wrap;
+    font-size: 1.2rem; 
+    color: #333; 
+    font-weight: bold; 
+    letter-spacing: 1px;
 }
-
 
 .footer {
-
     width: 100%;
     padding: 15px;
     background-color: #333;
@@ -85,15 +65,27 @@ h1 {
 }
 
 @media (max-width: 575px) {
+    .content {
+        height: auto;
+    }
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .header {
+        padding: 15px;
+    }
+    .logo {
+        width: 150px;
+    }
+    .game-core{
+        width: 70%;
+        padding: 30px;;
+    }
+    #result {
+        font-size: 1rem;
+    }    
     .footer {
         flex-direction: column;
-    }
-}
-@media (max-height: 600px) {
-    .footer, .header {
-        display: none;
-    }
-    .game-core {
-        margin: 0 auto;
     }
 }
